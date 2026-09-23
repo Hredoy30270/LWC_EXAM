@@ -1,0 +1,23 @@
+<template>
+    <h1>Opportunities</h1>
+            <lightning-button
+                label="Set Expected Revenue"
+                variant="brand"
+                onclick={handleUpdate}
+                disabled={isLoading}>
+            </lightning-button>
+    <template for:each={Opportunities} for:item="opp">
+        <div key={opp.Id}>
+            <p>{opp.Name} - {opp.Amount} - {opp.Probability} - {opp.ExpectedRevenue}</p>
+        <lightning-button
+                label="Set Expected Revenue"
+                variant="brand"
+                data-id={opp.Id}
+                onclick={handleUpdate}>
+        </lightning-button>
+        
+        </div>
+        
+    </template>
+
+</template>
